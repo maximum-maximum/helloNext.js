@@ -2,10 +2,12 @@ import { useState } from "react";
 import Layout from "../components/layout";
 
 export default function Home() {
-  const url = "./data.json";
+  const localhost = "http://localhost:3000";
+  const url = "/data.json";
+
   const [data, setData] = useState({ message: "", data: [] });
 
-  fetch(url)
+  fetch(localhost + url)
     .then((res) => res.json())
     .then((res) => setData(res));
 
